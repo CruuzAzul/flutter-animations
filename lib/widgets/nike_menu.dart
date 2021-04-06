@@ -39,21 +39,26 @@ class NikeMenu extends AnimatedWidget {
     return Positioned(
         top: 30,
         right: 30,
-        child: Row(
-          children: [
-            for (int i = 0; i < listElem.length; i++)
-              Transform.translate(
-                offset:
-                    Offset(0.0, -50 * (i + 1) * (1 - _animationElemMenu.value)),
-                child: elemMenu(listElem[i]),
-              ),
-            for (int i = 0; i < listIcon.length; i++)
-              Transform.translate(
-                offset:
-                    Offset(0.0, -80 * (i + 1) * (1 - _animationElemMenu.value)),
-                child: iconMenu(listIcon[i]),
-              ),
-          ],
-        ));
+        child: MediaQuery.of(context).size.width > 1000
+            ? Row(
+                children: [
+                  for (int i = 0; i < listElem.length; i++)
+                    Transform.translate(
+                      offset: Offset(
+                          0.0, -50 * (i + 1) * (1 - _animationElemMenu.value)),
+                      child: elemMenu(listElem[i]),
+                    ),
+                  for (int i = 0; i < listIcon.length; i++)
+                    Transform.translate(
+                      offset: Offset(
+                          0.0, -80 * (i + 1) * (1 - _animationElemMenu.value)),
+                      child: iconMenu(listIcon[i]),
+                    ),
+                ],
+              )
+            : Transform.translate(
+                offset: Offset(0.0, -80 * (1 - _animationElemMenu.value)),
+                child: iconMenu(Icons.menu,),
+              ));
   }
 }

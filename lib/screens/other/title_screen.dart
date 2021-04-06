@@ -75,6 +75,7 @@ class _PageState extends State<TitleSlide> with SingleTickerProviderStateMixin {
                   animatedTexts: [
                     TypewriterAnimatedText(
                       widget.text,
+                      textAlign: TextAlign.center,
                       textStyle: const TextStyle(
                           fontSize: 100.0,
                           fontWeight: FontWeight.bold,

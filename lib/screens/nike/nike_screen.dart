@@ -73,6 +73,16 @@ class _PageState extends State<SlideNike> with TickerProviderStateMixin {
     super.didUpdateWidget(oldWidget);
   }
 
+  double getTextSize(double currentSize) {
+    if (currentSize < 500) {
+      return 100.0;
+    } else if (currentSize < 1000) {
+      return 200.0;
+    } else if (currentSize < 1500) {
+      return 300.0;
+    } else return 450.0;
+  }
+
   @override
   Widget build(BuildContext context) {
     return ClipPath(
@@ -87,7 +97,8 @@ class _PageState extends State<SlideNike> with TickerProviderStateMixin {
               height: double.infinity,
               child: Stack(
                 children: [
-                  Positioned( // Background
+                  Positioned(
+                      // Background
                       top: 0,
                       left: 0,
                       bottom: 0,
@@ -96,26 +107,29 @@ class _PageState extends State<SlideNike> with TickerProviderStateMixin {
                         './assets/images/nike/background.png',
                         fit: BoxFit.cover,
                       )),
-                  Positioned.fill(
-                      right: -180,
-                      child: Align(
-                        alignment: Alignment.centerRight,
-                        child: Opacity(
-                          opacity: 0.7,
-                          child: Transform(
-                            transform: Matrix4.identity()
-                              ..translate(
-                                  0.0, 10 * animationControllerBackgound.value)
-                              ..rotateY(vector.radians(180))
-                              ..rotateZ(vector.radians(-30)),
-                            child: Image.asset(
-                              './assets/images/nike/nike.png',
-                              fit: BoxFit.contain,
-                              width: 200,
+                  MediaQuery.of(context).size.width > 1000 ?
+                    Positioned.fill(
+                        right: -180,
+                        child: Align(
+                          alignment: Alignment.centerRight,
+                          child: Opacity(
+                            opacity: 0.7,
+                            child: Transform(
+                              transform: Matrix4.identity()
+                                ..translate(
+                                    0.0, 10 * animationControllerBackgound.value)
+                                ..rotateY(vector.radians(180))
+                                ..rotateZ(vector.radians(-30)),
+                              child: Image.asset(
+                                './assets/images/nike/nike.png',
+                                fit: BoxFit.contain,
+                                width: 200,
+                              ),
                             ),
                           ),
-                        ),
-                      )),
+                        ))
+                      :
+                      SizedBox(height: 0.0,),
                   Positioned.fill(
                       left: 200,
                       child: Align(
@@ -145,42 +159,45 @@ class _PageState extends State<SlideNike> with TickerProviderStateMixin {
                         fit: BoxFit.contain,
                       )),
                   Positioned.fill(
-                      child: Align(
-                    alignment: Alignment.center,
-                    child: Opacity(
-                      opacity: 0.5,
-                      child: Transform(
-                        alignment: Alignment.center,
-                        transform: Matrix4.identity()
-                          ..scale(_animationShoesDown.value)
-                          ..translate(-50.0 * _animationShoesTweak.value,
-                              -50 * _animationShoesTweak.value)
-                          ..rotateZ(
-                              vector.radians(20 * _animationShoesTweak.value)),
-                        child: Image.asset(
-                          './assets/images/nike/nike.png',
-                          fit: BoxFit.contain,
-                          width: 700,
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Opacity(
+                        opacity: 0.5,
+                        child: Transform(
+                          alignment: Alignment.center,
+                          transform: Matrix4.identity()
+                            ..scale(_animationShoesDown.value)
+                            ..translate((MediaQuery.of(context).size.width > 1000 ? -50.0 : 1) * _animationShoesTweak.value,
+                                1 * _animationShoesTweak.value)
+                            ..rotateZ(vector
+                                .radians(20 * _animationShoesTweak.value)),
+                          child: Image.asset(
+                            './assets/images/nike/nike.png',
+                            fit: BoxFit.contain,
+                            width: MediaQuery.of(context).size.width / 2.5,
+                          ),
                         ),
                       ),
                     ),
-                  )),
-                  Positioned.fill( // Letter A
-                    left: 300,
+                  ),
+                  Positioned.fill(
+                    // Letter A
+                    left: MediaQuery.of(context).size.width/6,
                     child: NikeLetter(
                       letter: 'A',
                       color: Colors.white,
-                      fontSize: 450,
+                      fontSize: getTextSize(MediaQuery.of(context).size.width),
                       alignment: Alignment.centerLeft,
                       animation: _animationLetters,
                     ),
                   ),
-                  Positioned.fill( // Letter R
-                    right: 300,
+                  Positioned.fill(
+                    // Letter R
+                    right: MediaQuery.of(context).size.width/6,
                     child: NikeLetter(
                       letter: 'R',
                       color: Colors.white,
-                      fontSize: 450,
+                      fontSize: getTextSize(MediaQuery.of(context).size.width),
                       alignment: Alignment.centerRight,
                       animation: _animationLetters,
                     ),
@@ -192,28 +209,33 @@ class _PageState extends State<SlideNike> with TickerProviderStateMixin {
                       alignment: Alignment.center,
                       transform: Matrix4.identity()
                         ..scale(_animationShoesDown.value)
-                        ..translate(-180.0 * _animationShoesTweak.value)
+                        ..translate((MediaQuery.of(context).size.width > 1000
+                                ? -180.0
+                                : -30) *
+                            _animationShoesTweak.value)
                         ..rotateZ(
                             vector.radians(-35 * _animationShoesTweak.value)),
                       child: Image.asset(
                         './assets/images/nike/nike.png',
                         fit: BoxFit.contain,
-                        width: 700,
+                        width: MediaQuery.of(context).size.width / 2.5,
                       ),
                     ),
                   )),
-                  Positioned.fill( // Letter I
-                    right: 100,
+                  Positioned.fill(
+                    // Letter I
+                    // right: 100,
                     child: NikeLetter(
                       letter: 'I',
                       color: Colors.white,
-                      fontSize: 450,
+                      fontSize: getTextSize(MediaQuery.of(context).size.width),
                       alignment: Alignment.center,
                       animation: _animationLetters,
                     ),
                   ),
                   NikeMenu(_animationMenu),
-                  Positioned.fill( // Button Shop
+                  Positioned.fill(
+                      // Button Shop
                       bottom: 70,
                       child: Transform.translate(
                         offset: Offset(0.0, 200 * (1 - _animationMenu.value)),

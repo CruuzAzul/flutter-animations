@@ -55,24 +55,31 @@ class _PageState extends State<SlideEgypt> with SingleTickerProviderStateMixin {
               child: Stack(
                 children: [
                   Positioned(
-                      width: MediaQuery.of(context).size.width,
+                      top: 0,
+                      left: 0,
+                      bottom: 0,
+                      right: 0,
                       child: Image.asset(
                         './assets/images/egypt/sky.png',
-                        fit: BoxFit.contain,
+                        fit: BoxFit.cover,
                       )),
                   Positioned.fill(
                     top: 40,
-                    child: Align(
-                      alignment: Alignment.topCenter,
-                      child: Transform.translate(
-                        offset: Offset(
-                            0.0, (-100 * ((1 - animationController.value))) + (-100 * (widget.transitionPercentage ?? 0))),
-                        child: Opacity(
-                          opacity: animationController.value - (widget.transitionPercentage ?? 0),
-                          child: Column(
-                            children: [
-                              Text(
+                    child: Transform.translate(
+                      offset: Offset(
+                          0.0,
+                          (-100 * ((1 - animationController.value))) +
+                              (-100 * (widget.transitionPercentage ?? 0))),
+                      child: Opacity(
+                        opacity: animationController.value -
+                            (widget.transitionPercentage ?? 0),
+                        child: Column(
+                          children: [
+                            FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: Text(
                                 'THE ANCIENT WORLD',
+                                textAlign: TextAlign.center,
                                 style: GoogleFonts.ibmPlexSerif(
                                   textStyle: TextStyle(
                                     color: Color(0XFFd8b189),
@@ -80,23 +87,23 @@ class _PageState extends State<SlideEgypt> with SingleTickerProviderStateMixin {
                                   ),
                                 ),
                               ),
-                              Divider(
-                                indent: MediaQuery.of(context).size.width / 2.2,
-                                endIndent:
-                                    MediaQuery.of(context).size.width / 2.2,
-                                color: Color(0XFFd8b189),
-                                thickness: 3,
-                              ),
-                            ],
-                          ),
+                            ),
+                            Divider(
+                              indent: MediaQuery.of(context).size.width / 2.2,
+                              endIndent:
+                                  MediaQuery.of(context).size.width / 2.2,
+                              color: Color(0XFFd8b189),
+                              thickness: 3,
+                            ),
+                          ],
                         ),
                       ),
                     ),
                   ),
                   Positioned(
                       width: MediaQuery.of(context).size.width,
-                      left: -450,
-                      bottom: -50,
+                      left: MediaQuery.of(context).size.width / 3,
+                      bottom: 0,
                       child: Transform.translate(
                           offset: Offset(
                               0.0,
@@ -107,26 +114,35 @@ class _PageState extends State<SlideEgypt> with SingleTickerProviderStateMixin {
                             fit: BoxFit.contain,
                           ))),
                   Positioned(
-                    top: 110,
-                    left: 300,
+                    top: MediaQuery.of(context).size.height / 6,
+                    width: MediaQuery.of(context).size.width,
                     child: Transform.translate(
-                      offset:
-                          Offset(0.0, (200 * ((1 - animationController.value))) + (200 * (widget.transitionPercentage ?? 0))),
-                      child: Text(
-                        'EGYPT',
-                        style: GoogleFonts.ibmPlexSerif(
-                          textStyle: TextStyle(
-                              color: Colors.white,
-                              fontSize: 300,
-                              fontWeight: FontWeight.bold),
+                      offset: Offset(
+                          0.0,
+                          (200 * ((1 - animationController.value))) +
+                              (200 * (widget.transitionPercentage ?? 0))),
+                      child: Padding(
+                        padding: const EdgeInsets.all(40.0),
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            'EGYPT',
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.ibmPlexSerif(
+                              textStyle: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 300.0,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
                         ),
                       ),
                     ),
                   ),
                   Positioned(
                       width: MediaQuery.of(context).size.width,
-                      bottom: -100,
-                      right: -300,
+                      right: MediaQuery.of(context).size.width / 3,
+                      bottom: 0,
                       child: Transform.translate(
                           offset: Offset(
                               0.0,
@@ -137,11 +153,13 @@ class _PageState extends State<SlideEgypt> with SingleTickerProviderStateMixin {
                             fit: BoxFit.contain,
                           ))),
                   Positioned(
-                      bottom: -350,
+                      bottom: 0,
                       width: MediaQuery.of(context).size.width,
                       child: Transform.translate(
                         offset: Offset(
-                            0.0, (100 * ((1 - animationController.value))) + (100 * (widget.transitionPercentage ?? 0))),
+                            0.0,
+                            (100 * ((1 - animationController.value))) +
+                                (100 * (widget.transitionPercentage ?? 0))),
                         child: Image.asset(
                           './assets/images/egypt/sand.png',
                           fit: BoxFit.contain,
