@@ -38,7 +38,7 @@ class NikeButton extends StatelessWidget {
                         ..translate(20.0)
                         ..rotateZ(vector.radians(-20)),
                       child: Image.asset(
-                        'images/nike/logo-nike.png',
+                        './assets/images/nike/logo-nike.png',
                         height: 30,
                         color: Color(0xFFd17052),
                         fit: BoxFit.contain,

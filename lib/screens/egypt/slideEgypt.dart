@@ -1,4 +1,3 @@
-import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:zoom_in_parralax/Animations/circle_clipper.dart';
@@ -58,7 +57,7 @@ class _PageState extends State<SlideEgypt> with SingleTickerProviderStateMixin {
                   Positioned(
                       width: MediaQuery.of(context).size.width,
                       child: Image.asset(
-                        'images/egypt/sky.png',
+                        './assets/images/egypt/sky.png',
                         fit: BoxFit.contain,
                       )),
                   Positioned.fill(
@@ -104,7 +103,7 @@ class _PageState extends State<SlideEgypt> with SingleTickerProviderStateMixin {
                               (80 * ((1 - animationController.value))) +
                                   (80 * (widget.transitionPercentage ?? 0))),
                           child: Image.asset(
-                            'images/egypt/pyramid.png',
+                            './assets/images/egypt/pyramid.png',
                             fit: BoxFit.contain,
                           ))),
                   Positioned(
@@ -134,7 +133,7 @@ class _PageState extends State<SlideEgypt> with SingleTickerProviderStateMixin {
                               (70 * ((1 - animationController.value))) +
                                   (70 * (widget.transitionPercentage ?? 0))),
                           child: Image.asset(
-                            'images/egypt/pyramid.png',
+                            './assets/images/egypt/pyramid.png',
                             fit: BoxFit.contain,
                           ))),
                   Positioned(
@@ -144,7 +143,7 @@ class _PageState extends State<SlideEgypt> with SingleTickerProviderStateMixin {
                         offset: Offset(
                             0.0, (100 * ((1 - animationController.value))) + (100 * (widget.transitionPercentage ?? 0))),
                         child: Image.asset(
-                          'images/egypt/sand.png',
+                          './assets/images/egypt/sand.png',
                           fit: BoxFit.contain,
                         ),
                       )),

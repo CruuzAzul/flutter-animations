@@ -1,7 +1,5 @@
-import 'dart:math' as math;
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:zoom_in_parralax/Animations/circle_clipper.dart';
 import 'package:vector_math/vector_math_64.dart' as vector;
 import 'package:zoom_in_parralax/widgets/nike_big_letter.dart';
@@ -95,7 +93,7 @@ class _PageState extends State<SlideNike> with TickerProviderStateMixin {
                       bottom: 0,
                       right: 0,
                       child: Image.asset(
-                        'images/nike/background.png',
+                        './assets/images/nike/background.png',
                         fit: BoxFit.cover,
                       )),
                   Positioned.fill(
@@ -111,7 +109,7 @@ class _PageState extends State<SlideNike> with TickerProviderStateMixin {
                               ..rotateY(vector.radians(180))
                               ..rotateZ(vector.radians(-30)),
                             child: Image.asset(
-                              'images/nike/nike.png',
+                              './assets/images/nike/nike.png',
                               fit: BoxFit.contain,
                               width: 200,
                             ),
@@ -131,7 +129,7 @@ class _PageState extends State<SlideNike> with TickerProviderStateMixin {
                               ..rotateY(vector.radians(180))
                               ..rotateZ(vector.radians(-70)),
                             child: Image.asset(
-                              'images/nike/nike.png',
+                              './assets/images/nike/nike.png',
                               fit: BoxFit.contain,
                               width: 100,
                             ),
@@ -143,7 +141,7 @@ class _PageState extends State<SlideNike> with TickerProviderStateMixin {
                       top: 30,
                       width: 100,
                       child: Image.asset(
-                        'images/nike/logo-nike.png',
+                        './assets/images/nike/logo-nike.png',
                         fit: BoxFit.contain,
                       )),
                   Positioned.fill(
@@ -160,7 +158,7 @@ class _PageState extends State<SlideNike> with TickerProviderStateMixin {
                           ..rotateZ(
                               vector.radians(20 * _animationShoesTweak.value)),
                         child: Image.asset(
-                          'images/nike/nike.png',
+                          './assets/images/nike/nike.png',
                           fit: BoxFit.contain,
                           width: 700,
                         ),
@@ -198,7 +196,7 @@ class _PageState extends State<SlideNike> with TickerProviderStateMixin {
                         ..rotateZ(
                             vector.radians(-35 * _animationShoesTweak.value)),
                       child: Image.asset(
-                        'images/nike/nike.png',
+                        './assets/images/nike/nike.png',
                         fit: BoxFit.contain,
                         width: 700,
                       ),
@@ -214,6 +212,7 @@ class _PageState extends State<SlideNike> with TickerProviderStateMixin {
                       animation: _animationLetters,
                     ),
                   ),
+                  NikeMenu(_animationMenu),
                   Positioned.fill( // Button Shop
                       bottom: 70,
                       child: Transform.translate(
@@ -222,7 +221,6 @@ class _PageState extends State<SlideNike> with TickerProviderStateMixin {
                             alignment: Alignment.bottomCenter,
                             child: NikeButton(text: "GO TO SHOP")),
                       )),
-                  NikeMenu(_animationMenu),
                 ],
               ),
             );

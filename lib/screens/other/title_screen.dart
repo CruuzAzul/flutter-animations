@@ -1,4 +1,3 @@
-import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:zoom_in_parralax/Animations/circle_clipper.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
@@ -48,7 +47,7 @@ class _PageState extends State<TitleSlide> with SingleTickerProviderStateMixin {
   void didUpdateWidget(covariant TitleSlide oldWidget) {
     if (oldWidget.transitionPercentage == null &&
         widget.transitionPercentage != null) {
-      animationController.forward(from: 0);
+      animationController.forward(from: 0.0);
     }
     super.didUpdateWidget(oldWidget);
   }
@@ -57,12 +56,12 @@ class _PageState extends State<TitleSlide> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return ClipPath(
       clipper:
-          InvertedCircleClipper(percentage: widget.transitionPercentage ?? 0),
+          InvertedCircleClipper(percentage: widget.transitionPercentage ?? 0.0),
       child: AnimatedBuilder(
         animation: animationController,
         builder: (context, child) {
           return Transform.scale(
-            scale: 1 + (widget.transitionPercentage ?? 0),
+            scale: 1.0 + (widget.transitionPercentage ?? 0.0),
             child: child,
           );
         },
@@ -90,8 +89,8 @@ class _PageState extends State<TitleSlide> with SingleTickerProviderStateMixin {
                 ),
               )),
           Positioned(
-            top: 30,
-            left: 30,
+            top: 30.0,
+            left: 30.0,
             child: ScaleTransition(
               scale: _animationScall,
               child: FlutterLogo(size: 50.0),
