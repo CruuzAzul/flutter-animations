@@ -1,16 +1,39 @@
-# zoom_in_parralax
+# :movie_camera: Animation Demo Application
 
-A new Flutter project.
+This application was made to test the Flutter animations. We can find 3 screens using parallax and transitions with a zoom-in effect. You can find at the end of the document the sources used to make the screens.
 
-## Getting Started
+:fire: **You can find the web application [here](https://app-presentation.web.app).**
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## :checkered_flag: ​Getting Started
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- To use the project you must already have done all the necessary installation for Flutter. ([Flutter - Get started](https://flutter.dev/docs/get-started/install))
+- After that you can install all packages from the command line : 
+
+```bash
+flutter pub get
+```
+
+- Now you can select your device and run the project. The project has been realized on **Chrome** and **IOS Simulator** devices.
+
+
+
+## :computer: ​Web Screens
+
+
+
+## :iphone: ​Mobile Screens
+
+
+
+## :package: Sources :
+
+**Egypt screen :** 
+
+- https://scroll-d4c87.web.app/#/egypt
+
+**Nike screen :** 
+
+- https://dribbble.com/shots/6286400-Nike-Webpage-Concept
+
