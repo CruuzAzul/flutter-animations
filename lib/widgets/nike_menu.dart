@@ -45,7 +45,7 @@ class NikeMenu extends AnimatedWidget {
                   for (int i = 0; i < listElem.length; i++)
                     Transform.translate(
                       offset: Offset(
-                          0.0, -50 * (i + 1) * (1 - _animationElemMenu.value)),
+                          0.0, -70 * (i + 1) * (1 - _animationElemMenu.value)),
                       child: elemMenu(listElem[i]),
                     ),
                   for (int i = 0; i < listIcon.length; i++)
