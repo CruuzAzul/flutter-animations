@@ -83,6 +83,16 @@ class _PageState extends State<SlideNike> with TickerProviderStateMixin {
     } else return 450.0;
   }
 
+  double getShoesPosition(double currentSize) {
+    if (currentSize < 500) {
+      return -30.0;
+    } else if (currentSize < 800) {
+      return -80.0;
+    } else if (currentSize < 1300) {
+      return -100.0;
+    } else return -180.0;
+  }
+
   @override
   Widget build(BuildContext context) {
     return ClipPath(
@@ -152,7 +162,7 @@ class _PageState extends State<SlideNike> with TickerProviderStateMixin {
                       )),
                   Positioned(
                       left: 30,
-                      top: 30,
+                      top: 50,
                       width: 100,
                       child: Image.asset(
                         './assets/images/nike/logo-nike.png',
@@ -209,9 +219,7 @@ class _PageState extends State<SlideNike> with TickerProviderStateMixin {
                       alignment: Alignment.center,
                       transform: Matrix4.identity()
                         ..scale(_animationShoesDown.value)
-                        ..translate((MediaQuery.of(context).size.width > 1000
-                                ? -180.0
-                                : -30) *
+                        ..translate(getShoesPosition(MediaQuery.of(context).size.width) *
                             _animationShoesTweak.value)
                         ..rotateZ(
                             vector.radians(-35 * _animationShoesTweak.value)),

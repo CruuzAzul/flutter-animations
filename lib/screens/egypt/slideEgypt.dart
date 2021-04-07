@@ -75,15 +75,18 @@ class _PageState extends State<SlideEgypt> with SingleTickerProviderStateMixin {
                             (widget.transitionPercentage ?? 0),
                         child: Column(
                           children: [
-                            FittedBox(
-                              fit: BoxFit.scaleDown,
-                              child: Text(
-                                'THE ANCIENT WORLD',
-                                textAlign: TextAlign.center,
-                                style: GoogleFonts.ibmPlexSerif(
-                                  textStyle: TextStyle(
-                                    color: Color(0XFFd8b189),
-                                    fontSize: 40,
+                            Padding(
+                              padding: const EdgeInsets.only(left: 40.0, right: 40.0, top: 40.0),
+                              child: FittedBox(
+                                fit: BoxFit.scaleDown,
+                                child: Text(
+                                  'THE ANCIENT WORLD',
+                                  textAlign: TextAlign.center,
+                                  style: GoogleFonts.ibmPlexSerif(
+                                    textStyle: TextStyle(
+                                      color: Color(0XFFd8b189),
+                                      fontSize: 40,
+                                    ),
                                   ),
                                 ),
                               ),

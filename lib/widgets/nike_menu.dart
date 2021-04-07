@@ -37,7 +37,7 @@ class NikeMenu extends AnimatedWidget {
     List<IconData> listIcon = [Icons.store, Icons.people_alt];
 
     return Positioned(
-        top: 30,
+        top: 50,
         right: 30,
         child: MediaQuery.of(context).size.width > 1000
             ? Row(
