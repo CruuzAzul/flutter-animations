@@ -18,15 +18,6 @@ flutter pub get
 - Now you can select your device and run the project. The project has been realized on **Chrome** and **IOS Simulator** devices.
 
 
-
-## :computer: ​Web Screens
-
-
-
-## :iphone: ​Mobile Screens
-
-
-
 ## :package: Sources :
 
 **Egypt screen :** 
@@ -37,3 +28,9 @@ flutter pub get
 
 - https://dribbble.com/shots/6286400-Nike-Webpage-Concept
 
+## :computer: :iphone: ​Web & Mobile Screens
+
+<div>
+  <img align="left" src="https://user-images.githubusercontent.com/60877626/113847786-1b133980-9798-11eb-9d44-e8e3bfdfe0a0.gif" height="350"/>
+  <img align="center" src="https://user-images.githubusercontent.com/60877626/113842168-b2758e00-9792-11eb-8084-a365e9c02306.gif" height="350"/>
+</div>
