@@ -42,7 +42,7 @@ class _ScreensManagementState extends State<ScreensManagement> {
           ),
           TitleSlide(
             color: Colors.white,
-            text: 'Scroll to start ...',
+            text: 'Scroll to start ....',
             transitionPercentage:
                 pageController.hasClients ? pageOffset.clamp(0.0, 1.0) : null,
           ),
