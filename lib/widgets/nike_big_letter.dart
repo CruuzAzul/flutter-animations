@@ -8,11 +8,11 @@ class NikeLetter extends AnimatedWidget {
   final Alignment alignment;
   Animation get _animationLetters => listenable as Animation;
 
-  const NikeLetter( 
+  const NikeLetter(
       {Key key,
       this.letter,
       this.fontSize,
-      this.color, 
+      this.color,
       this.alignment,
       Animation animation})
       : super(key: key, listenable: animation);

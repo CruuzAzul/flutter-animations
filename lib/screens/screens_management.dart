@@ -12,7 +12,7 @@ class ScreensManagement extends StatefulWidget {
 
 class _ScreensManagementState extends State<ScreensManagement> {
   PageController pageController;
-  
+
   @override
   void initState() {
     super.initState();

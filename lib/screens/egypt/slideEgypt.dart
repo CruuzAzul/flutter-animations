@@ -76,7 +76,8 @@ class _PageState extends State<SlideEgypt> with SingleTickerProviderStateMixin {
                         child: Column(
                           children: [
                             Padding(
-                              padding: const EdgeInsets.only(left: 40.0, right: 40.0, top: 40.0),
+                              padding: const EdgeInsets.only(
+                                  left: 40.0, right: 40.0, top: 40.0),
                               child: FittedBox(
                                 fit: BoxFit.scaleDown,
                                 child: Text(

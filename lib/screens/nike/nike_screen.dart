@@ -80,7 +80,8 @@ class _PageState extends State<SlideNike> with TickerProviderStateMixin {
       return 200.0;
     } else if (currentSize < 1500) {
       return 300.0;
-    } else return 450.0;
+    } else
+      return 450.0;
   }
 
   double getShoesPosition(double currentSize) {
@@ -90,7 +91,8 @@ class _PageState extends State<SlideNike> with TickerProviderStateMixin {
       return -80.0;
     } else if (currentSize < 1300) {
       return -100.0;
-    } else return -180.0;
+    } else
+      return -180.0;
   }
 
   @override
@@ -117,29 +119,30 @@ class _PageState extends State<SlideNike> with TickerProviderStateMixin {
                         './assets/images/nike/background.png',
                         fit: BoxFit.cover,
                       )),
-                  MediaQuery.of(context).size.width > 1000 ?
-                    Positioned.fill(
-                        right: -180,
-                        child: Align(
-                          alignment: Alignment.centerRight,
-                          child: Opacity(
-                            opacity: 0.7,
-                            child: Transform(
-                              transform: Matrix4.identity()
-                                ..translate(
-                                    0.0, 10 * animationControllerBackgound.value)
-                                ..rotateY(vector.radians(180))
-                                ..rotateZ(vector.radians(-30)),
-                              child: Image.asset(
-                                './assets/images/nike/nike.png',
-                                fit: BoxFit.contain,
-                                width: 200,
+                  MediaQuery.of(context).size.width > 1000
+                      ? Positioned.fill(
+                          right: -180,
+                          child: Align(
+                            alignment: Alignment.centerRight,
+                            child: Opacity(
+                              opacity: 0.7,
+                              child: Transform(
+                                transform: Matrix4.identity()
+                                  ..translate(0.0,
+                                      10 * animationControllerBackgound.value)
+                                  ..rotateY(vector.radians(180))
+                                  ..rotateZ(vector.radians(-30)),
+                                child: Image.asset(
+                                  './assets/images/nike/nike.png',
+                                  fit: BoxFit.contain,
+                                  width: 200,
+                                ),
                               ),
                             ),
-                          ),
-                        ))
-                      :
-                      SizedBox(height: 0.0,),
+                          ))
+                      : SizedBox(
+                          height: 0.0,
+                        ),
                   Positioned.fill(
                       left: 200,
                       child: Align(
@@ -177,7 +180,11 @@ class _PageState extends State<SlideNike> with TickerProviderStateMixin {
                           alignment: Alignment.center,
                           transform: Matrix4.identity()
                             ..scale(_animationShoesDown.value)
-                            ..translate((MediaQuery.of(context).size.width > 1000 ? -50.0 : 1) * _animationShoesTweak.value,
+                            ..translate(
+                                (MediaQuery.of(context).size.width > 1000
+                                        ? -50.0
+                                        : 1) *
+                                    _animationShoesTweak.value,
                                 1 * _animationShoesTweak.value)
                             ..rotateZ(vector
                                 .radians(20 * _animationShoesTweak.value)),
@@ -192,7 +199,7 @@ class _PageState extends State<SlideNike> with TickerProviderStateMixin {
                   ),
                   Positioned.fill(
                     // Letter A
-                    left: MediaQuery.of(context).size.width/6,
+                    left: MediaQuery.of(context).size.width / 6,
                     child: NikeLetter(
                       letter: 'A',
                       color: Colors.white,
@@ -203,7 +210,7 @@ class _PageState extends State<SlideNike> with TickerProviderStateMixin {
                   ),
                   Positioned.fill(
                     // Letter R
-                    right: MediaQuery.of(context).size.width/6,
+                    right: MediaQuery.of(context).size.width / 6,
                     child: NikeLetter(
                       letter: 'R',
                       color: Colors.white,
@@ -219,7 +226,8 @@ class _PageState extends State<SlideNike> with TickerProviderStateMixin {
                       alignment: Alignment.center,
                       transform: Matrix4.identity()
                         ..scale(_animationShoesDown.value)
-                        ..translate(getShoesPosition(MediaQuery.of(context).size.width) *
+                        ..translate(getShoesPosition(
+                                MediaQuery.of(context).size.width) *
                             _animationShoesTweak.value)
                         ..rotateZ(
                             vector.radians(-35 * _animationShoesTweak.value)),

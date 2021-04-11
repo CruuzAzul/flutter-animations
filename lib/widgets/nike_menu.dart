@@ -58,7 +58,9 @@ class NikeMenu extends AnimatedWidget {
               )
             : Transform.translate(
                 offset: Offset(0.0, -80 * (1 - _animationElemMenu.value)),
-                child: iconMenu(Icons.menu,),
+                child: iconMenu(
+                  Icons.menu,
+                ),
               ));
   }
 }
