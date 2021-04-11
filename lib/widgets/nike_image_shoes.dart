@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class NikeImageShoes extends AnimatedWidget {
   final Alignment alignment;
   final double opacity;
 
+  // ignore: unused_element
   Animation get _animationLetters => listenable as Animation;
 
   const NikeImageShoes({
