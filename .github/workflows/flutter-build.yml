@@ -1,0 +1,53 @@
+name: 🏗️ Build Application and Tests on merge
+on:
+  push:
+    branches:
+    - master
+  pull_request:
+    branches:
+    - master
+jobs:
+  ios-build:
+    name: 📱 Build IOS Application
+    runs-on: macos-latest
+    steps:
+    - name: 🧰 Run checkout action
+      uses: actions/checkout@v2
+    - name: ⛏️ Run java setup action 
+      uses: actions/setup-java@v1
+      with:
+        java-version: '13.x'
+    - name: 🐦 Run flutter action
+      uses: subosito/flutter-action@v1
+      with:
+        flutter-version: '2.0.3'
+    - name: 📦 Get all packages
+      run: flutter pub get
+    - name: 🧹 Format application code 
+      run: flutter format --set-exit-if-changed .
+    - name: 🕵️‍♂️ Analyze application
+      run: flutter analyze .
+    - name: 🔨 build application APK 
+      run: flutter build apk
+    - name: 📱 Build ios version
+      run: flutter build ios --release --no-codesign
+  web-build:
+    name: 💻 Build Web Application
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🧰 Run checkout action
+      uses: actions/checkout@v2
+    - name: 🐦 Run flutter action
+      uses: subosito/flutter-action@v1
+      with:
+        channel: beta
+    - name: 🌐 Enable web configuration 
+      run: flutter config --enable-web
+    - name: 📦 Get all packages 
+      run: flutter pub get
+    - name: 🧹 Format application code  
+      run: flutter format --set-exit-if-changed .
+    - name: 🕵️‍♂️ Analyze application 
+      run: flutter analyze .
+    - name: 💻 Build web version 
+      run: flutter build web
